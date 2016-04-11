@@ -10,20 +10,20 @@ server.listen(8082, function(){
   console.log('listening on *:3000');
 });
 
-var board = new five.Board({port: '/dev/cu.usbmodem1411'});
+//var board = new five.Board({port: '/dev/cu.usbmodem1411'});
 
 io.on('connection', function(socket){
   console.log('Connected');
-  board.on("ready", function() {
-    console.log('Board Ready');
-    var sensor = new five.Sensor({
-      pin: "A0",
-      freq: 200
-    });
+  // board.on("ready", function() {
+  //   console.log('Board Ready');
+  //   var sensor = new five.Sensor({
+  //     pin: "A0",
+  //     freq: 200
+  //   });
 
-    sensor.scale([ 0, 100 ]).on("change", function() {
-      console.log(this.value);
-      socket.emit('pulse', this.scaled)
-    });
-  });
+  //   sensor.scale([ 0, 100 ]).on("change", function() {
+  //     console.log(this.value);
+  //     socket.emit('pulse', this.scaled)
+  //   });
+  // });
 });

@@ -2,7 +2,7 @@ $(function () {
   var socket = io.connect('http://localhost:8082'),
       pulse_data = [],
       pulse_avg = [],
-      heart_rate = 0,
+      heart_rate = 70,
       plot,
       totalPoints = 100,
       lastPeak = Date.now(),
@@ -95,4 +95,5 @@ $(function () {
   })
 
   setup(y_min, y_max);
+  console.log(heart_rate)
 });
