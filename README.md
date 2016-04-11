@@ -1,4 +1,4 @@
-# https://github.com/ShawnSantiago/BPMtoSongApp.git
+# BPMtoSongApp
 A browser front-end for an arduino [pulse sensor](http://pulsesensor.com/) using johnny-five, express, socket.io, and flot.
 
 
