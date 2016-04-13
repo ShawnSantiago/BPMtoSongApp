@@ -12,7 +12,7 @@ $(function () {
       y_max = 70;
 
   socket.on('pulse', function (data) {
-    
+
     pulse_data.push(data)
     pulse_data.shift();
 
@@ -44,7 +44,7 @@ $(function () {
     //   heart_rate = parseInt(60 / ((peak_sum / peakDiffs.length) / 1000), 10);
     //   $('#heartrate').html(heart_rate);
     // }
-   
+
   });
 
   // pre-fill pulse_data with all zeroes
@@ -67,7 +67,7 @@ $(function () {
     if (min - 10 < y_min || max + 5 > y_max) {
       setup(min - 10, max + 5);
     }
-    
+
     return res;
   }
 
@@ -97,3 +97,46 @@ $(function () {
   setup(y_min, y_max);
   console.log(heart_rate)
 });
+
+// soundcloud
+
+SC.initialize({
+      client_id: "51a05ad7e3e35bef46da014ffdfa38b5",
+      redirect_uri: "localhost:8000",
+
+  });
+
+function getTracks(){
+  SC.get("/tracks", {
+      bpm:{
+        from:100,
+        to: 150
+      },
+      limit: 10
+    }, function (tracks) {
+
+        var trackList = [];
+
+        for (var i = 0; i < tracks.length; i++) {
+
+            trackList.push(tracks[i].permalink_url);
+
+        }
+        embedPlayer(trackList);
+    });
+}
+
+    function embedPlayer (trackListArray) {
+      SC.oEmbed(trackListArray[0]// user or playlist to embed
+        , { color: "000"
+          , auto_play: true
+          , maxwidth: 800
+          , maxheight: 1000
+          , show_comments: true } // options
+        , document.getElementById("widget") // what element to attach player to
+      );
+    }
+
+    window.onload = function() {
+      getTracks();
+    };
