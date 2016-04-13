@@ -2,18 +2,30 @@
 <html>
   <head>
     <title>PUL SEN SOR</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="http://connect.soundcloud.com/sdk.js"></script>
     <script src="https://w.soundcloud.com/player/api.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/jquery.js"></script>
-    <script src="/js/jquery.flot.js"></script>
+    <script src="/socket.io/socket.io.js"></script>    
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="/js/jquery.leanModal.min.js"></script>
     <script src='/js/main.js'></script>
 
     <link rel='stylesheet' href='/css/style.css'></link>
   </head>
   <body>
     <div id="widget"></div>
-    <div id='placeholder' style='width: 300px; height: 300px'></div>
+    <button id='button' style='width: 100px; height: 30px'>Hit It!</button>
+    <a href='#settings' rel='leanmodal' style='width: 100px; height: 30px'>Settings</a>
+    <div id="settings">
+      <a class="modal_close" href="#">close</a>
+      <p>
+        <label for="amountHR">Set HeartRate</label>
+        <input type="text" id="amountHR" readonly style="border:0; color:#f6931f; font-weight:bold;">
+      </p>
+      <div id="slider-setHeartRate-min"></div>
+      <button id="set">Set</button>
+    </div>
     <div id='heartrate_container'><span class='heart'>&hearts;</span><span id='heartrate'>0</span></div>
   </body>
 </html>
