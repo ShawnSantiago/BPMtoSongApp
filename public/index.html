@@ -22,15 +22,16 @@
     <div class="top-bar">
       <div class="top-bar-right">
         <ul class="menu">
-          <li><a href='#settings' rel='leanmodal' id="settingButton" class="button">Settings</a></li>
+          <li><button id='button' class="alert button">Hit It!</button></li>
+          <li><button href='#settings' rel='leanmodal' id="settingButton" class="button">Settings</button></li>
         </ul>
       </div>
     </div>
            
-    <div class="callout large primary">
-      <div class="row column text-center">
+    <div class="callout large primary" id="hrHeader">
+      <div class="row column text-center" >
         <h1>Heartbeater</h1>
-        <h2 class="subheader">Find the song that matches your heart</h2>
+        <h3 class="subheader" style="color:#fff;">Find the song that matches your heart</h3>
       </div>
     </div>
            
@@ -39,13 +40,9 @@
         <div class="row align-middle">
           <div class="columns" id="widget"></div>
         </div>
-        <button id='button' class="alert button">Hit It!</button>
       </div>
     </div>
-    
 
-    
-   
     <div id="settings">
       <button class="modal_close close-button" aria-label="Close alert" type="button">
         <span aria-hidden="true">&times;</span>

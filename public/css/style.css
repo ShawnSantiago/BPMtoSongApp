@@ -21,11 +21,18 @@ label {
   display: none;
   padding: 5% 2.5%; }
 
+#settingButton {
+  margin-left: 5%; }
+
 #widget iframe {
   text-align: center; }
 
 #set {
   margin-top: 5%; }
+
+#hrHeader {
+  background-color: #c0392b;
+  color: #000; }
 
 #heartrate_container {
   position: absolute;
