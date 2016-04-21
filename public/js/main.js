@@ -91,6 +91,7 @@ $(function () {
 
   $( "#set" ).click(function() {
     sethrIncrease = $( "#slider-setHeartRate-min" ).slider( "value" )
+    alert("Heartrate Set");
 
   });
 

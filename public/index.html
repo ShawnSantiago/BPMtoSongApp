@@ -8,24 +8,59 @@
     <script src="/socket.io/socket.io.js"></script>    
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
+
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
     <script src="/js/jquery.leanModal.min.js"></script>
     <script src='/js/main.js'></script>
 
     <link rel='stylesheet' href='/css/style.css'></link>
   </head>
   <body>
-    <div id="widget"></div>
-    <button id='button' style='width: 100px; height: 30px'>Hit It!</button>
-    <a href='#settings' rel='leanmodal' style='width: 100px; height: 30px'>Settings</a>
+    <div class="top-bar">
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href='#settings' rel='leanmodal' id="settingButton" class="button">Settings</a></li>
+        </ul>
+      </div>
+    </div>
+           
+    <div class="callout large primary">
+      <div class="row column text-center">
+        <h1>Heartbeater</h1>
+        <h2 class="subheader">Find the song that matches your heart</h2>
+      </div>
+    </div>
+           
+    <div class="row medium-8 large-7 columns">
+      <div class="blog-post">
+        <div class="row align-middle">
+          <div class="columns" id="widget"></div>
+        </div>
+        <button id='button' class="alert button">Hit It!</button>
+      </div>
+    </div>
+    
+
+    
+   
     <div id="settings">
-      <a class="modal_close" href="#">close</a>
+      <button class="modal_close close-button" aria-label="Close alert" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h3>Settings</h3>
       <p>
-        <label for="amountHR">Set HeartRate</label>
+        <label for="amountHR"><h5>Set HeartRate</h5></label>
         <input type="text" id="amountHR" readonly style="border:0; color:#f6931f; font-weight:bold;">
       </p>
       <div id="slider-setHeartRate-min"></div>
-      <button id="set">Set</button>
+      <button class="alert button" id="set">Set</button>
     </div>
-    <div id='heartrate_container'><span class='heart'>&hearts;</span><span id='heartrate'>0</span></div>
+    <!-- <div id='heartrate_container'><span class='heart'>&hearts;</span><span id='heartrate'>0</span></div> -->
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>
