@@ -2,6 +2,8 @@ body, html {
   padding: 0;
   margin: 0;
   height: 100%;
+  font-family: "Cabin", Helvetica, sans-serif;
+  background-color: #f0f0f0;
 }
 
 select {
@@ -12,11 +14,22 @@ label {
       margin: 30px 0 0 0;
     }
 
+h1 {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.subheader {
+  color: white;
+  padding-bottom: 40px;
+}
+
 #settings{
     position: fixed;
     z-index:100;
     top: 0px;
-    left: 0px;  
+    left: 0px;
     width:50%;
     background: #fff;
     border: 1px solid black;
@@ -26,6 +39,12 @@ label {
 
 #settingButton {
   margin-left: 5%;
+}
+
+.widget-container{
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 #widget {
@@ -39,21 +58,30 @@ label {
 }
 
 #hrHeader{
-  background-color: #c0392b;
+  background: url("../img/bg.jpg") center center;
+  background-size: cover;
+  padding: 60px 0;
+  //background-size: cover;
   color: #000;
 }
 
+.top-bar{
+  background-color: #222;
+  ul {
+    background-color: #222;
+  }
+}
 
 #heartrate_container {
+  display: none;
   position: absolute;
-  bottom: 25px;
-  padding: 20px;
-
-  background: #fdd;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+  background: #222;
   opacity: .9;
   font-size: 24pt;
-  font-weight: 100;
-  font-family: helvetica neue, arial, verdana, sans-serif;
+  color: white;
 }
 
   #heartrate_container span.heart {
@@ -66,3 +94,76 @@ label {
     color: #f77;
     font-size: 12pt;
   }
+
+label{
+  padding: 0;
+  margin: 0;
+  font-size: 22px;
+  color: white;
+}
+
+select{
+  height: 55px;
+  font-size: 24px;
+}
+
+
+// heart loader
+
+/* HEAR SHAPE BY
+http://www.aliencoders.com/content/how-make-heart-shape-using-css */
+
+#heart {
+  display: none;
+  position: absolute;
+  bottom:20%;
+  left:50%;
+  width: 100px;
+  height: 90px;
+  margin:-50px -45px;
+  -webkit-transition:all 1s ease;
+  -webkit-animation: heartbeat 1s infinite;
+}
+#heart:before, #heart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: hsl(0,50%,50%);
+  border-radius: 50px 50px 0 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+#heart:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin :100% 100%;
+}
+
+/* HEARTBEAT ANIMATION BY Mi1o */
+@-webkit-keyframes heartbeat {
+  0% { -webkit-transform: scale(1); }
+  8% { -webkit-transform: scale(0.7);  }
+  17% { -webkit-transform: scale(1.5); }
+  25% { -webkit-transform: scale(0.7); }
+  87.5% { -webkit-transform: scale(0.7); }
+  100%  { -webkit-transform: scale(1); }
+}

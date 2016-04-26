@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PUL SEN SOR</title>
+    <title>Heartbeat Song || Songs that match your BPM</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="http://connect.soundcloud.com/sdk.js"></script>
     <script src="https://w.soundcloud.com/player/api.js"></script>
-    <script src="/socket.io/socket.io.js"></script>    
+    <script src="/socket.io/socket.io.js"></script>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <!-- Compressed CSS -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
 
     <!-- Compressed JavaScript -->
@@ -16,29 +17,54 @@
     <script src="/js/jquery.leanModal.min.js"></script>
     <script src='/js/main.js'></script>
 
+    <link href='https://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/css/style.css'></link>
   </head>
   <body>
     <div class="top-bar">
       <div class="top-bar-right">
         <ul class="menu">
-          <li><button id='button' class="alert button">Hit It!</button></li>
-          <li><button href='#settings' rel='leanmodal' id="settingButton" class="button">Settings</button></li>
+          <!-- <li><a id='button' class="alert button">Hit It!</a></li> -->
+          <li><a href='#settings' rel='leanmodal' id="settingButton" class="button secondary">Settings</a></li>
         </ul>
       </div>
     </div>
-           
+
     <div class="callout large primary" id="hrHeader">
-      <div class="row column text-center" >
-        <h1>Heartbeater</h1>
-        <h3 class="subheader" style="color:#fff;">Find the song that matches your heart</h3>
+      <div class="row column text-center">
+        <h1>Heartbeat Song</h1>
+        <h3 class="subheader">Find a song that matches the beat in your heart.</h3>
+       <!--  <form class="large-offset-3 large-4 column">
+        <label>In my heart is:
+        <select id="genreSelect">
+          <option value="0">Pop</option>
+          <option value="1">Alternative</option>
+          <option value="2">Folk</option>
+          <option value="3">Rock</option>
+          <option value="4">Metal</option>
+          <option value="5">Punk</option>
+          <option value="6">Electronic</option>
+          <option value="7">Trance</option>
+          <option value="8">Deep House</option>
+          <option value="9">Hip Hop</option>
+          <option value="10">Rap</option>
+          <option value="11">Country</option>
+          <option value="12">Jazz</option>
+          <option value="13">Classical</option>
+        </select> -->
+        <div id='heartrate_container'><span class='heart'>&hearts;</span><span id='heartrate'>BPM: </span></div>
+      </label>
+      </form>
+
+        <button id='button' class="large button alert">Get my song!</button>
       </div>
     </div>
-           
-    <div class="row medium-8 large-7 columns">
+
+    <div class="row large-12 columns">
       <div class="blog-post">
-        <div class="row align-middle">
-          <div class="columns" id="widget"></div>
+        <div class="widget-container">
+          <div id="widget"></div>
+          <div id="heart"></div>
         </div>
       </div>
     </div>
@@ -55,7 +81,7 @@
       <div id="slider-setHeartRate-min"></div>
       <button class="alert button" id="set">Set</button>
     </div>
-    <!-- <div id='heartrate_container'><span class='heart'>&hearts;</span><span id='heartrate'>0</span></div> -->
+    <!--  -->
     <script>
       $(document).foundation();
     </script>
